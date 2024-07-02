@@ -51,7 +51,7 @@ public class WeatherServiceImplTest {
     public void getBuyerNotificationTest(){
 
         Mockito.when(this.buyerNotificationRepository.findByEmail(Mockito.anyString())).thenReturn(DummyMock.buildBuyerNotificationEntityList());
-        List<BuyerNotificationRsDto> response = weatherService.getNotifications("yesibcastro@gmail.com");
+        List<BuyerNotificationRsDto> response = weatherService.getNotifications("paolatechnicaltest@gmail.com");
         Assertions.assertNotNull(response);
     }
 
@@ -60,14 +60,14 @@ public class WeatherServiceImplTest {
         Map<String, Object> requestParam = WeatherMapper.requestParam(ConstantParam.KEY_VALUE, "6.1543519,-75.6076758", "2", "no", "no", "es");
         Mockito.when(this.buyerNotificationRepository.save(Mockito.any(BuyerNotificationEntity.class))).thenReturn(DummyMock.buildBuyerEntity());
         Mockito.when(this.weatherApi.weatherApiRsDto(Mockito.anyMap())).thenReturn(DummyMock.buildWeatherApi());
-        WeatherRsDto response = weatherService.getWeather(requestParam,"yesibcastro@gmail.com");
+        WeatherRsDto response = weatherService.getWeather(requestParam,"paolatechnicaltest@gmail.com");
         Assertions.assertNotNull(response);
     }
 
     @Test
     public void getWeatherExceptionTest(){
         Map<String, Object> requestParam = WeatherMapper.requestParam(ConstantParam.KEY_VALUE, "6.1543519,-75.6076758", "2", "no", "no", "es");
-        MeliWeatherException exception = Assertions.assertThrows(MeliWeatherException.class, () -> weatherService.getWeather(requestParam,"yesibcastro@gmail.com"));
+        MeliWeatherException exception = Assertions.assertThrows(MeliWeatherException.class, () -> weatherService.getWeather(requestParam,"paolatechnicaltest@gmail.com"));
         Assertions.assertNotNull(exception);
     }
 
@@ -75,7 +75,7 @@ public class WeatherServiceImplTest {
     public void getBuyerNotificationExceptionTest(){
 
         Mockito.when(this.buyerNotificationRepository.findByEmail(Mockito.anyString())).thenReturn(Optional.of(new ArrayList<>()));
-        MeliWeatherException exception = Assertions.assertThrows(MeliWeatherException.class, () -> weatherService.getNotifications("yesibcastro@gmail.com"));
+        MeliWeatherException exception = Assertions.assertThrows(MeliWeatherException.class, () -> weatherService.getNotifications("paolatechnicaltest@gmail.com"));
         Assertions.assertNotNull(exception);
     }
 
