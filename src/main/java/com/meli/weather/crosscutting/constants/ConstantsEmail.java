@@ -5,8 +5,8 @@ public class ConstantsEmail {
     private ConstantsEmail(){
 
     }
-    public static final String USER_EMAIL = "yesibcastro@gmail.com";
-    public static final String PASSWORD = "ozcq duui cvwl hauc";
+    public static final String USER_EMAIL = "paolatechnicaltest@gmail.com";
+    public static final String PASSWORD = "xxnq dosr gkiq teqb";
     public static final String SUBJECT = "Entrega retrasada por clima MELI";
     public static final String TEXT = "“Hola! Tenemos programada la entrega de tu paquete para mañana, en la dirección de\n" +
             "entrega esperamos un día con {condition} y por esta razón\n" +
